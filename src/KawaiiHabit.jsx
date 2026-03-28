@@ -3038,7 +3038,7 @@ function NekoChanTab({habits,todos,challenges}) {
             onKeyDown={e=>e.key==="Enter"&&send()}
             placeholder="Talk to Neko-chan~ 🐱"
           />
-          <button className="chat-send" onClick={send}>➤</button>
+          <button className="chat-send" onClick={()=>send()}>➤</button>
         </div>
       </div>
     </div>
