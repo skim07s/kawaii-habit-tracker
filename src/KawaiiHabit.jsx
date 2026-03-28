@@ -43,6 +43,7 @@ const THEMES = {
     '--shadow-card':'rgba(0,0,0,.5)','--gradient-warm':'linear-gradient(135deg,#e94560,#ff6b81)',
     '--gradient-cool':'linear-gradient(135deg,#0f3460,#16213e)',
     '--tag-bg':'#1a1a4e','--tag-text':'#e0e0ff',
+    '--bg-surface-alt':'#1e2d50','--text-placeholder':'#8080a0','--bg-nav-btn':'rgba(255,255,255,0.08)',
   }},
   sakura: { label:'🌸 Sakura', vars: {
     '--bg-app':'#fff0f5','--bg-surface':'#ffe4ed','--bg-card':'#fff5f8',
@@ -73,6 +74,7 @@ const THEMES = {
     '--shadow-card':'rgba(0,0,0,.5)','--gradient-warm':'linear-gradient(135deg,#48bfe3,#72d1eb)',
     '--gradient-cool':'linear-gradient(135deg,#1b3a4b,#0d1b2a)',
     '--tag-bg':'#1b3a4b','--tag-text':'#48bfe3',
+    '--bg-surface-alt':'#243548','--text-placeholder':'#6a8a9f','--bg-nav-btn':'rgba(255,255,255,0.08)',
   }},
 };
 
@@ -675,6 +677,30 @@ function getNekoResponse(msg, habits, todos, challenges) {
       "Feeling super kawaii today~ thanks for asking! 💕🌸",
     ]);
   }
+  // --- Capabilities ---
+  if (lower.match(/what can you do|what do you do|your capabilities|help me with/)) {
+    return pick([
+      "I can track your habits, cheer you on, and remind you to stay consistent~ 🌸✨",
+      "Nyaa~ I help you build awesome habits! Add streaks, earn stars, and chat with me~ 🐱💕",
+      "I'm your kawaii habit buddy! I track progress, give encouragement, and make it fun~ ✨🌸",
+    ]);
+  }
+  // --- Identity ---
+  if (lower.match(/what'?s your name|who are you|your name/)) {
+    return pick([
+      "I'm Neko-chan~ your kawaii habit companion! 🐱🌸",
+      "Nyaa~ my name is Neko! I'm here to help you build great habits~ 🐱✨",
+      "You can call me Neko-chan~ I'm your purr-sonal habit helper! 🌸💕",
+    ]);
+  }
+  // --- Memory ---
+  if (lower.match(/who.*remember|what.*remember|what do you know about me/)) {
+    return pick([
+      `I remember you${name}~ and all the amazing habits you're building! 🌸✨`,
+      `Of course I remember you${name}! You're my favorite human~ 🐱💕`,
+      `Nyaa~ I know you're ${name}, and you're doing SO well with your habits! ✨🌸`,
+    ]);
+  }
   return pick(NEKO_RESPONSES.fallback);
 }
 
@@ -696,6 +722,7 @@ const STYLE = `
   --radius-card:var(--radius-xl);
   --radius-nav:var(--radius-xl);
   --radius-btn:var(--radius-md);
+  --r-full:9999px;
   /* ── spacing scale ── */
   --space-xs:6px;
   --space-sm:10px;
@@ -1275,7 +1302,7 @@ body{
 }
 .neko-speech{margin-top:6px;}
 .speech-bubble{
-  background:var(--bg-surface);
+  background:var(--bg-surface-alt);
   border-radius:20px;
   padding:10px 18px;
   font-size:13px;font-weight:600;color:var(--text-dark);
@@ -1288,7 +1315,7 @@ body{
   content:'';position:absolute;
   top:-5px;left:50%;
   width:10px;height:10px;
-  background:var(--bg-surface);border-radius:2px;
+  background:var(--bg-surface-alt);border-radius:2px;
   transform:translateX(-50%) rotate(45deg);
   box-shadow:-1px -1px 3px rgba(var(--accent-rgb),0.05);
 }
@@ -1320,6 +1347,7 @@ body{
   width:7px;height:7px;
   border-radius:50%;display:inline-block;
   animation:streakPulse 2s ease-in-out infinite;
+  box-shadow:0 0 6px var(--accent-light);
 }
 @keyframes streakPulse{
   0%,100%{transform:scale(1);opacity:0.6}
