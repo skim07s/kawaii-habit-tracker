@@ -35,46 +35,124 @@ function saveState(key, value) {
 const THEMES = {
   kawaii: { label:'🌸 Kawaii', vars: null }, // default — uses :root values
   dark: { label:'🌙 Dark', vars: {
-    '--bg-app':'#1a1a2e','--bg-surface':'#16213e','--bg-card':'#0f3460',
-    '--bg-nav':'#0f3460','--bg-input':'#16213e','--bg-hover':'#1a1a4e',
-    '--text-primary':'#e0e0ff','--text-secondary':'#a0a0c0','--text-muted':'#707090',
-    '--accent':'#e94560','--accent-light':'#ff6b81','--accent-pale':'#2a1a2e',
-    '--border':'#1a1a4e','--border-light':'#252550','--shadow-soft':'rgba(0,0,0,.4)',
-    '--shadow-card':'rgba(0,0,0,.5)','--gradient-warm':'linear-gradient(135deg,#e94560,#ff6b81)',
-    '--gradient-cool':'linear-gradient(135deg,#0f3460,#16213e)',
-    '--tag-bg':'#1a1a4e','--tag-text':'#e0e0ff',
-    '--bg-surface-alt':'#1e2d50','--text-placeholder':'#8080a0','--bg-nav-btn':'rgba(255,255,255,0.08)',
+    '--bg-base':'#1A1525','--bg-surface':'#241C35','--bg-surface-alt':'#2E2445',
+    '--bg-nav':'rgba(26,21,37,0.92)','--bg-nav-btn':'rgba(255,255,255,0.08)',
+    '--accent-dark':'#e94560','--accent':'#ff6b81','--accent-light':'#ff8fa0',
+    '--accent-soft':'#3a1a2e','--accent-softer':'#2a1525','--accent-blush':'#3a1a30',
+    '--accent-border':'#4a2a3e','--accent-heading':'#ff8fa0',
+    '--accent-rgb':'233,69,96','--accent-dark-rgb':'255,107,129',
+    '--text-dark':'#e0d8f0','--text-muted':'#a090b8','--text-soft':'#806a90',
+    '--text-placeholder':'#6a5a7a','--text-done':'#8070a0','--text-streak':'#FFB07C',
+    '--green-1':'#4a8a6a','--green-2':'#5aaa80','--green-3':'#6a9a78',
+    '--green-done-1':'#5aaa80','--green-done-2':'#4a9a70',
+    '--green-glow':'rgba(74,138,106,0.35)',
+    '--challenge-1':'#ff6a72','--challenge-2':'#ff8fa0',
+    '--challenge-glow':'rgba(255,106,114,0.35)',
+    '--overlay-rgb':'20,16,30','--gold':'#FFD700',
+    '--sticker-bg-1':'#2E2445','--sticker-bg-2':'#3a1a2e',
+    '--sticker-green-1':'#1a2a20','--sticker-green-2':'#1a3428',
+    '--sticker-purple-1':'#2a1a30','--sticker-purple-2':'#321a40',
+    '--sticker-neko-1':'#2E2445','--sticker-neko-2':'#3a2a50',
+    '--cat-body':'#2E2445','--cat-outline':'#ff8fa0','--cat-blush':'#3a1a30',
+    '--cat-eyes':'#e0d8f0','--cat-mouth':'#ff8fa0','--cat-whiskers':'#6a5a7a',
+    '--cat-ear-inner':'#3a1a30','--cat-tear':'#6ab4d0',
+    '--lavender-btn-1':'#ff6b81','--lavender-btn-2':'#9a6aaa',
+    '--accent-softer-rgb':'42,21,37','--green-text-soft':'#6a9a78',
+    '--pink-primary':'var(--accent)','--pink-blush':'var(--accent-light)',
+    '--lavender':'#7a5a8a','--blue-soft':'#4a6a8a','--green-soft':'#5a8a6a',
+    '--warn-soft':'#8a7040','--text-primary':'var(--text-dark)',
+    '--bg-warm':'var(--bg-base)','--white-soft':'var(--bg-nav)',
+    '--text-on-accent':'#fff',
   }},
   sakura: { label:'🌸 Sakura', vars: {
-    '--bg-app':'#fff0f5','--bg-surface':'#ffe4ed','--bg-card':'#fff5f8',
-    '--bg-nav':'#ffccd5','--bg-input':'#fff0f5','--bg-hover':'#ffd6e0',
-    '--text-primary':'#5c2434','--text-secondary':'#8b4560','--text-muted':'#c0809a',
-    '--accent':'#e84393','--accent-light':'#fd79a8','--accent-pale':'#ffe8f0',
-    '--border':'#ffb6c1','--border-light':'#ffd6e0','--shadow-soft':'rgba(232,67,147,.08)',
-    '--shadow-card':'rgba(232,67,147,.12)','--gradient-warm':'linear-gradient(135deg,#e84393,#fd79a8)',
-    '--gradient-cool':'linear-gradient(135deg,#ffb6c1,#ffd6e0)',
-    '--tag-bg':'#ffe4ed','--tag-text':'#e84393',
+    '--bg-base':'#fff0f5','--bg-surface':'#ffe4ed','--bg-surface-alt':'#fff5f8',
+    '--bg-nav':'rgba(255,204,213,0.85)','--bg-nav-btn':'rgba(255,224,236,0.35)',
+    '--accent-dark':'#d63384','--accent':'#e84393','--accent-light':'#fd79a8',
+    '--accent-soft':'#ffe8f0','--accent-softer':'#fff0f5','--accent-blush':'#ffd0e0',
+    '--accent-border':'#ffb6c1','--accent-heading':'#d63384',
+    '--accent-rgb':'232,67,147','--accent-dark-rgb':'214,51,132',
+    '--text-dark':'#5c2434','--text-muted':'#8b4560','--text-soft':'#c0809a',
+    '--text-placeholder':'#d4a0b0','--text-done':'#c4a0b0','--text-streak':'#ff8a5c',
+    '--green-1':'#6baf8d','--green-2':'#8fd4b4','--green-3':'#a0c8b0',
+    '--green-done-1':'#8fd4b4','--green-done-2':'#7cc4a0',
+    '--green-glow':'rgba(107,175,141,0.35)',
+    '--challenge-1':'#ff7a8a','--challenge-2':'#ff9aa2',
+    '--challenge-glow':'rgba(255,122,138,0.35)',
+    '--overlay-rgb':'92,36,52','--gold':'#FFD700',
+    '--sticker-bg-1':'#fff5f8','--sticker-bg-2':'#ffe8f0',
+    '--sticker-green-1':'#f0fff4','--sticker-green-2':'#e8faf0',
+    '--sticker-purple-1':'#fff0f5','--sticker-purple-2':'#f8e8ff',
+    '--sticker-neko-1':'#fff5f8','--sticker-neko-2':'#f0e6ff',
+    '--cat-body':'#ffffff','--cat-outline':'#fd79a8','--cat-blush':'#ffd0e0',
+    '--cat-eyes':'#5c2434','--cat-mouth':'#fd79a8','--cat-whiskers':'#d4a0b0',
+    '--cat-ear-inner':'#ffd0e0','--cat-tear':'#8ed4f0',
+    '--lavender-btn-1':'#fd79a8','--lavender-btn-2':'#cdb4db',
+    '--accent-softer-rgb':'255,240,245','--green-text-soft':'#a0c8b0',
+    '--pink-primary':'var(--accent)','--pink-blush':'var(--accent-light)',
+    '--lavender':'#cdb4db','--blue-soft':'#bde0fe','--green-soft':'#a8e6cf',
+    '--warn-soft':'#ffd6a5','--text-primary':'var(--text-dark)',
+    '--bg-warm':'var(--bg-base)','--white-soft':'var(--bg-nav)',
+    '--text-on-accent':'#fff',
   }},
   matcha: { label:'🍵 Matcha', vars: {
-    '--bg-app':'#f0f5e8','--bg-surface':'#e4edda','--bg-card':'#f5f8f0',
-    '--bg-nav':'#c5d5a5','--bg-input':'#f0f5e8','--bg-hover':'#d6e0c8',
-    '--text-primary':'#2d3a1f','--text-secondary':'#4a6030','--text-muted':'#80a060',
-    '--accent':'#6b8e23','--accent-light':'#8fbc3c','--accent-pale':'#e8f0d8',
-    '--border':'#b0c890','--border-light':'#d0e0b8','--shadow-soft':'rgba(107,142,35,.08)',
-    '--shadow-card':'rgba(107,142,35,.12)','--gradient-warm':'linear-gradient(135deg,#6b8e23,#8fbc3c)',
-    '--gradient-cool':'linear-gradient(135deg,#b0c890,#d0e0b8)',
-    '--tag-bg':'#e4edda','--tag-text':'#6b8e23',
+    '--bg-base':'#f0f5e8','--bg-surface':'#e4edda','--bg-surface-alt':'#f5f8f0',
+    '--bg-nav':'rgba(197,213,165,0.85)','--bg-nav-btn':'rgba(208,224,184,0.35)',
+    '--accent-dark':'#5a7a1a','--accent':'#6b8e23','--accent-light':'#8fbc3c',
+    '--accent-soft':'#e8f0d8','--accent-softer':'#f0f5e8','--accent-blush':'#d0e0b8',
+    '--accent-border':'#b0c890','--accent-heading':'#5a7a1a',
+    '--accent-rgb':'107,142,35','--accent-dark-rgb':'90,122,26',
+    '--text-dark':'#2d3a1f','--text-muted':'#4a6030','--text-soft':'#80a060',
+    '--text-placeholder':'#a0b888','--text-done':'#90b080','--text-streak':'#c89040',
+    '--green-1':'#5a8a40','--green-2':'#70a850','--green-3':'#80b868',
+    '--green-done-1':'#70a850','--green-done-2':'#609840',
+    '--green-glow':'rgba(90,138,64,0.35)',
+    '--challenge-1':'#c89040','--challenge-2':'#d8a858',
+    '--challenge-glow':'rgba(200,144,64,0.35)',
+    '--overlay-rgb':'45,58,31','--gold':'#FFD700',
+    '--sticker-bg-1':'#f5f8f0','--sticker-bg-2':'#e8f0d8',
+    '--sticker-green-1':'#e8f5e0','--sticker-green-2':'#d8eac8',
+    '--sticker-purple-1':'#f0f5e8','--sticker-purple-2':'#e8f0d8',
+    '--sticker-neko-1':'#f5f8f0','--sticker-neko-2':'#e8f0d8',
+    '--cat-body':'#ffffff','--cat-outline':'#8fbc3c','--cat-blush':'#d0e0b8',
+    '--cat-eyes':'#2d3a1f','--cat-mouth':'#8fbc3c','--cat-whiskers':'#a0b888',
+    '--cat-ear-inner':'#d0e0b8','--cat-tear':'#8ed4f0',
+    '--lavender-btn-1':'#8fbc3c','--lavender-btn-2':'#a0c890',
+    '--accent-softer-rgb':'240,245,232','--green-text-soft':'#80b868',
+    '--pink-primary':'var(--accent)','--pink-blush':'var(--accent-light)',
+    '--lavender':'#a0c890','--blue-soft':'#b0d8c0','--green-soft':'#a8e6cf',
+    '--warn-soft':'#d8c0a0','--text-primary':'var(--text-dark)',
+    '--bg-warm':'var(--bg-base)','--white-soft':'var(--bg-nav)',
+    '--text-on-accent':'#fff',
   }},
   midnight: { label:'🌊 Midnight', vars: {
-    '--bg-app':'#0d1b2a','--bg-surface':'#1b2838','--bg-card':'#1b3a4b',
-    '--bg-nav':'#1b3a4b','--bg-input':'#1b2838','--bg-hover':'#243b53',
-    '--text-primary':'#d4e4f7','--text-secondary':'#8baac4','--text-muted':'#5a7a94',
-    '--accent':'#48bfe3','--accent-light':'#72d1eb','--accent-pale':'#102a3a',
-    '--border':'#243b53','--border-light':'#2a4a63','--shadow-soft':'rgba(0,0,0,.4)',
-    '--shadow-card':'rgba(0,0,0,.5)','--gradient-warm':'linear-gradient(135deg,#48bfe3,#72d1eb)',
-    '--gradient-cool':'linear-gradient(135deg,#1b3a4b,#0d1b2a)',
-    '--tag-bg':'#1b3a4b','--tag-text':'#48bfe3',
-    '--bg-surface-alt':'#243548','--text-placeholder':'#6a8a9f','--bg-nav-btn':'rgba(255,255,255,0.08)',
+    '--bg-base':'#0d1b2a','--bg-surface':'#1b2838','--bg-surface-alt':'#243548',
+    '--bg-nav':'rgba(13,27,42,0.92)','--bg-nav-btn':'rgba(255,255,255,0.08)',
+    '--accent-dark':'#36a8c8','--accent':'#48bfe3','--accent-light':'#72d1eb',
+    '--accent-soft':'#102a3a','--accent-softer':'#0d1f2e','--accent-blush':'#1a3040',
+    '--accent-border':'#2a4a63','--accent-heading':'#72d1eb',
+    '--accent-rgb':'72,191,227','--accent-dark-rgb':'54,168,200',
+    '--text-dark':'#d4e4f7','--text-muted':'#8baac4','--text-soft':'#5a7a94',
+    '--text-placeholder':'#4a6a84','--text-done':'#6a8aa4','--text-streak':'#ffb07c',
+    '--green-1':'#4a8a6a','--green-2':'#5aaa80','--green-3':'#6a9a78',
+    '--green-done-1':'#5aaa80','--green-done-2':'#4a9a70',
+    '--green-glow':'rgba(74,138,106,0.35)',
+    '--challenge-1':'#ff6a72','--challenge-2':'#ff8fa0',
+    '--challenge-glow':'rgba(255,106,114,0.35)',
+    '--overlay-rgb':'10,20,34','--gold':'#FFD700',
+    '--sticker-bg-1':'#1b2838','--sticker-bg-2':'#102a3a',
+    '--sticker-green-1':'#0d2a1a','--sticker-green-2':'#0d341e',
+    '--sticker-purple-1':'#1a1a30','--sticker-purple-2':'#201a38',
+    '--sticker-neko-1':'#1b2838','--sticker-neko-2':'#1a2a40',
+    '--cat-body':'#1b2838','--cat-outline':'#72d1eb','--cat-blush':'#1a3040',
+    '--cat-eyes':'#d4e4f7','--cat-mouth':'#72d1eb','--cat-whiskers':'#4a6a84',
+    '--cat-ear-inner':'#1a3040','--cat-tear':'#48bfe3',
+    '--lavender-btn-1':'#48bfe3','--lavender-btn-2':'#6a8aaa',
+    '--accent-softer-rgb':'13,31,46','--green-text-soft':'#6a9a78',
+    '--pink-primary':'var(--accent)','--pink-blush':'var(--accent-light)',
+    '--lavender':'#5a7a9a','--blue-soft':'#4a7aaa','--green-soft':'#5a8a6a',
+    '--warn-soft':'#8a7040','--text-primary':'var(--text-dark)',
+    '--bg-warm':'var(--bg-base)','--white-soft':'var(--bg-nav)',
+    '--text-on-accent':'#fff',
   }},
 };
 
@@ -670,11 +748,20 @@ function getNekoResponse(msg, habits, todos, challenges) {
     ]);
   }
   // --- How are you ---
-  if (lower.match(/how are you|how do you feel|how's it going/)) {
+  if (lower.match(/how are you|how do you feel|how's it going|how you doing|you okay/)) {
     return pick([
       "I'm doing great~ especially now that you're here! 🌸✨",
       "Nyaa~ I'm always happy when we chat! 🐱💕 How about YOU?",
       "Feeling super kawaii today~ thanks for asking! 💕🌸",
+      "I'm doing wonderfully well right here with you! Nyan~ 💖",
+    ]);
+  }
+  // --- Languages (Fallback) ---
+  if (/[^\x00-\x7F]/.test(lower) || lower.match(/\b(hola|bonjour|hallo|ciao|namaste|안녕하세요|こんにちは|你好)\b/i)) {
+    return pick([
+      "I'm still learning other languages, but my heart speaks love! 💖 (I primarily understand English right now~)",
+      "You speak another language? So smart! 🌟 I only know English, teach me?",
+      "Meow~ That sounds beautiful! However, my developer only taught me English so far! 🐾"
     ]);
   }
   // --- Capabilities ---
@@ -1843,7 +1930,7 @@ body{
 .rel-badge .rel-fill{
   height:3px;width:48px;
   border-radius:3px;
-  background:rgba(255,143,171,0.2);
+  background:rgba(var(--accent-rgb),0.2);
   overflow:hidden;
 }
 .rel-badge .rel-fill-inner{
@@ -1922,7 +2009,7 @@ body{
 .ant-tease-bar{
   flex:1;height:6px;
   border-radius:6px;
-  background:rgba(255,143,171,0.12);
+  background:rgba(var(--accent-rgb),0.12);
   overflow:hidden;
 }
 .ant-tease-fill{
@@ -1942,12 +2029,12 @@ body{
 .memory-tier-rare{
   border-left:2px solid var(--pink-blush);
   padding-left:var(--space-sm);
-  background:rgba(255,194,209,0.06);
+  background:var(--accent-softer);
 }
 .memory-tier-epic{
   border-left:2px solid var(--lavender);
   padding-left:var(--space-sm);
-  background:rgba(205,180,219,0.08);
+  background:var(--accent-softer);
   animation:epicGlow 3s ease-in-out infinite;
 }
 .memory-tier-legendary{
@@ -1969,7 +2056,7 @@ body{
 /* ── memory toast tier overrides ── */
 .memory-toast.memory-tier-epic{
   border-color:var(--lavender);
-  background:linear-gradient(135deg,rgba(205,180,219,0.2),rgba(189,224,254,0.15));
+  background:linear-gradient(135deg,var(--bg-surface-alt),var(--accent-softer));
 }
 .memory-toast.memory-tier-legendary{
   border-color:rgba(255,215,0,0.3);
@@ -1995,8 +2082,8 @@ body{
   margin-top:var(--space-sm);
   padding:var(--space-sm) var(--space-md);
   border-radius:var(--radius-md);
-  background:rgba(205,180,219,0.06);
-  border:1.5px dashed rgba(205,180,219,0.2);
+  background:var(--accent-soft);
+  border:1.5px dashed var(--accent-border);
   cursor:default;
 }
 .locked-tease-emoji{

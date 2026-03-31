@@ -89,6 +89,7 @@ kawaii-habit-tracker/
 - **Hyper-kawaii aesthetic.** Pastel pinks, soft peach tones, rounded corners everywhere.
 - **Mobile-first.** Designed at 412px viewport. Scales gracefully with `max-width: 430px` container.
 - **Glass-card UI.** Layered cards with pink-toned shadows and hover lift effects.
+- **Dynamic Theming.** Full support for customizable color schemes, including a stunning dark "Midnight" mode with CSS variable-driven dynamic UI adaptation.
 - **Emotionally designed.** UI elements respond to Neko's mood — subtle shifts you feel but don't consciously notice.
 - **Zero dependencies for UI.** No component library — every button, card, modal, and animation is handcrafted.
 
@@ -115,6 +116,7 @@ kawaii-habit-tracker/
 | **Relationship Levels** | Shy → Comfy → Close → Bonded — unlocks over time with friction |
 | **Memory System** | Neko forms memories (5 types, 4 rarity tiers) and recalls them emotionally |
 | **Mood-Aware Dialogue** | Idle messages change based on mood, time of day, relationship level |
+| **Multilingual Awareness**| Gracefully acknowledges non-English greetings (Hola, こんにちは, 안녕하세요, etc.) even while operating primarily in English |
 | **Random Thoughts** | ~10% chance Neko says something off-topic and personal |
 | **Silent Smiles** | ~8% chance Neko just smiles instead of talking |
 | **Neko Initiation** | Neko nudges you if idle, with jittered timing so it feels natural |
