@@ -4,27 +4,23 @@
 
 ### *A living world that grows with you~*
 
-**An emotionally intelligent habit tracker with a cat companion who remembers, reacts, and evolves with your consistency.**
-
-[![Live Demo](https://img.shields.io/badge/Live-kawaii--habit--tracker.vercel.app-FF85A2?style=for-the-badge)](https://kawaii-habit-tracker.vercel.app)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev)
-[![PWA](https://img.shields.io/badge/PWA-Installable-FF85A2?style=for-the-badge&labelColor=8F4A76)](#quick-start)
-[![Mood Engine](https://img.shields.io/badge/System-Neko%20Mood%20Engine-FF85A2?style=for-the-badge&labelColor=8F4A76)](https://github.com/TheAlgo7/kawaii-habit-tracker)
-
-*This project treats habits as a relationship, not a checklist. Show up, and your world brightens. Drift away, and Neko feels it too.*
+[![Live Demo](https://img.shields.io/badge/Live-kawaii--habit--tracker.vercel.app-FF85A2?style=flat-square&labelColor=111111)](https://kawaii-habit-tracker.vercel.app)
+[![React](https://img.shields.io/badge/React-19-FF85A2?style=flat-square&logo=react&logoColor=white&labelColor=111111)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-8-FF85A2?style=flat-square&logo=vite&logoColor=white&labelColor=111111)](https://vite.dev)
+[![PWA](https://img.shields.io/badge/PWA-Installable-FF85A2?style=flat-square&labelColor=111111)](https://kawaii-habit-tracker.vercel.app)
+[![Neko](https://img.shields.io/badge/System-Neko%20Mood%20Engine-FF85A2?style=flat-square&labelColor=111111)](https://github.com/TheAlgo7/kawaii-habit-tracker)
 
 </div>
 
----
+<p align="center">
+  <img src="./docs/assets/hero.png" width="400" alt="Kawaii Habit Tracker" />
+</p>
 
-## Overview
+Kawaii Habit Tracker treats habits as a relationship, not a checklist. The app builds attachment: habits feed trust, trust shapes Neko's mood, and progress turns into a world that feels alive enough to revisit. Instead of sterile task management, you get a companion who remembers, reacts, and evolves with your consistency. Show up, and your world brightens. Drift away, and Neko feels it too.
 
-Kawaii Habit Tracker is a React PWA that wraps productivity inside emotional design. Instead of sterile task management, the app builds attachment: habits feed trust, trust shapes Neko's mood, and progress turns into a world that feels alive enough to revisit.
+> **Status:** Actively in development. Core habit tracking and Neko companion are live. The living world mechanics and full theme system are still being built out.
 
-Everything runs client-side. No backend. No account. No data leaving your device.
-
-## Core Features
+## Features
 
 - **Habit tracking** with streaks, progress feedback, and daily flow.
 - **To-do and challenge systems** for short-term and long-term momentum.
@@ -33,44 +29,17 @@ Everything runs client-side. No backend. No account. No data leaving your device
 - **Installable PWA** that works like a native app after first load.
 - **Theme and personalization support** without breaking the kawaii identity.
 
-## Quick Start
+## Install to Home Screen
 
-```bash
-git clone https://github.com/TheAlgo7/kawaii-habit-tracker.git
-cd kawaii-habit-tracker
-npm install
-npm run dev
-```
+**Android (Chrome):**
+1. Open [kawaii-habit-tracker.vercel.app](https://kawaii-habit-tracker.vercel.app) in Chrome
+2. Tap the **⋮** menu → **Add to Home screen**
+3. Tap **Add** — Neko moves in permanently~
 
-Open `http://localhost:5173`.
-
-Useful commands:
-
-```bash
-npm run build
-npm run preview
-npm run lint
-```
-
-## Project Structure
-
-```text
-kawaii-habit-tracker/
-├── public/
-│   ├── manifest.json
-│   ├── sw.js
-│   └── icon assets
-├── src/
-│   ├── main.jsx
-│   ├── App.jsx
-│   ├── App.css
-│   ├── index.css
-│   └── KawaiiHabit.jsx
-├── index.html
-├── vite.config.js
-├── vercel.json
-└── package.json
-```
+**iOS (Safari):**
+1. Open [kawaii-habit-tracker.vercel.app](https://kawaii-habit-tracker.vercel.app) in Safari
+2. Tap the **Share** button → **Add to Home Screen**
+3. Tap **Add** — your kawaii companion is always one tap away
 
 ## Stack
 
@@ -86,12 +55,32 @@ kawaii-habit-tracker/
 ## Design Language
 
 - **Hyper-kawaii, but intentional.** Pastels, softness, and emotional warmth without becoming shapeless.
-- **Mobile-first.** The app is tuned for phone-sized interaction, not desktop-first compromise.
+- **Mobile-first.** Tuned for phone-sized interaction, not desktop-first compromise.
 - **Companion-driven UX.** Neko is a system, not just a mascot.
 - **Handmade UI.** No component-library sameness, no off-the-shelf vibe.
 
+<details>
+<summary>Quick Start</summary>
+
+```bash
+git clone https://github.com/TheAlgo7/kawaii-habit-tracker.git
+cd kawaii-habit-tracker
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+```bash
+npm run build
+npm run preview
+npm run lint
+```
+
+</details>
+
 <div align="center">
 
-Built with **too much pink, just enough psychology, and a lot of love**.
+Built with too much pink, just enough psychology, and a lot of love by **[The Algothrim](https://thealgothrim.com)**
 
 </div>
