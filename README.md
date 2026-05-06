@@ -1,7 +1,7 @@
 <div align="center">
 
 # Kawaii Habit Tracker
-
+ 
 ### *A living world that grows with you~*
 
 [![Live Demo](https://img.shields.io/badge/Live-kawaii--habit--tracker.vercel.app-FF85A2?style=flat-square&labelColor=111111)](https://kawaii-habit-tracker.vercel.app)
